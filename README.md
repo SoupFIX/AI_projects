@@ -11,9 +11,6 @@
 <!-- CODE RAIN ANIMATION — scrolling terminal-style code blocks -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0221,100:0a1628&height=120&section=header&text=import%20clip%20%7C%20qdrant_client%20%7C%20fastapi%20%7C%20torch%20%7C%20streamlit%0Avector%20%3D%20model.encode(image)%20%23%20512-dim%20embedding%0Aresults%20%3D%20db.search(vector%2C%20top_k%3D10)%20%23%20%3C20ms&fontSize=13&fontColor=00ffe1&fontAlignY=35&animation=blinking&desc=⚡%20Encoding%20image...%20✅%20Vectors%20stored...%20🔍%20Searching%20512-dim%20space...%20🎯%20Results%20found%20in%2018ms&descAlignY=78&descSize=12&descColor=7be0ff" width="100%"/>
 
-<!-- SUBTITLE TYPING — features -->
-<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=16&duration=2000&pause=800&color=7BE0FF&center=true&vCenter=true&width=800&height=40&lines=🔍+Upload+an+image+→+Find+visually+similar+products+in+%3C20ms;🧠+512-Dimensional+Neural+Embeddings+via+CLIP+ViT%2FB32;⚡+HNSW+Approximate+Nearest+Neighbour+Vector+Search;🐳+Fully+Dockerized+%7C+3+containers%2C+1+command" alt="Features" />
-
 <br/><br/>
 
 <!-- BADGES WITH LINKS -->
@@ -328,12 +325,12 @@ curl http://localhost:8000/
 
 ## 🐳 Docker Images
 
-Both images are available on Docker Hub:
+Both images are publicly available on **[Docker Hub →](https://hub.docker.com/repository/docker/soup28/visual-product-search-engine/general)**
 
 | Image | Tag | Size | Purpose |
 |-------|-----|------|---------|
-| `soup28/visual_product_search_engine_project` | `api-1.0.0` | 8.93GB | FastAPI + CLIP + PyTorch |
-| `soup28/visual_product_search_engine_project` | `ui-1.0.0` | 1.02GB | Streamlit frontend |
+| `soup28/visual-product-search-engine` | `api-1.0.0` | 8.93GB | FastAPI + CLIP + PyTorch |
+| `soup28/visual-product-search-engine` | `ui-1.0.0` | 1.02GB | Streamlit frontend |
 
 > The API image is large because it includes PyTorch and the CLIP neural network weights.
 
