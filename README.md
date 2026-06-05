@@ -348,12 +348,12 @@ You see 10 visually similar products 🎯
 ┌─────────────────────────────────────────────────────────────┐
 │                    DOCKER NETWORK                           │
 │                                                             │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐  │
-│  │  qdrant_db   │◄───│ visual_search│◄───│ streamlit_ui │  │
-│  │              │    │   (FastAPI)  │    │  (Frontend)  │  │
-│  │ Vector store │    │   Port 8000  │    │  Port 8501   │  │
-│  │ Port 6333    │    └──────────────┘    └──────────────┘  │
-│  └──────────────┘                                          │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐   │
+│  │  qdrant_db   │◄───│ visual_search│◄───│ streamlit_ui │   │
+│  │              │    │   (FastAPI)  │    │  (Frontend)  │   │
+│  │ Vector store │    │   Port 8000  │    │  Port 8501   │   │
+│  │ Port 6333    │    └──────────────┘    └──────────────┘   │
+│  └──────────────┘                                           │
 └─────────────────────────────────────────────────────────────┘
          ▲                    ▲                    ▲
     localhost:6333       localhost:8000       localhost:8501
@@ -476,29 +476,29 @@ It uses **HNSW** (Hierarchical Navigable Small World) graphs to find the nearest
 
 ```
 Visual_Product_Search_Engine_Project/
-│
-├── 🐳 docker-compose.yml          ← Orchestrates all 3 containers
-├── 🐳 dockerfile                  ← Builds FastAPI container
-├── 🐳 Dockerfile.streamlit        ← Builds Streamlit container
-├── 📋 requirements.txt            ← Python dependencies
-│
-├── backend/                       ← FastAPI application
-│   ├── app.py                     ← Main API server (search endpoints)
-│   ├── clip_encoder.py            ← Loads CLIP model, encodes images
-│   ├── embedder.py                ← CLIPEmbedder class (reusable)
-│   ├── vector_store.py            ← Qdrant client, collection setup
-│   └── config.py                  ← Settings (model name, vector size, etc.)
-│
-├── frontend/                      ← Streamlit UI
-│   └── front_end.py               ← Beautiful space-themed search interface
-│
-├── data/
-│   ├── images/                    ← 500 Fashion-MNIST product images
-│   └── qdrant_data/               ← Qdrant vector database files
-│       └── collections/
-│           └── Products/          ← Your 500 stored vectors live here
-│
-└── scripts/                       ← Helper scripts
+ │
+ ├── 🐳 docker-compose.yml          ← Orchestrates all 3 containers
+ ├── 🐳 dockerfile                  ← Builds FastAPI container
+ ├── 🐳 Dockerfile.streamlit        ← Builds Streamlit container
+ ├── 📋 requirements.txt            ← Python dependencies
+ │
+ ├── backend/                       ← FastAPI application
+ │   ├── app.py                     ← Main API server (search endpoints)
+ │   ├── clip_encoder.py            ← Loads CLIP model, encodes images
+ │   ├── embedder.py                ← CLIPEmbedder class (reusable)
+ │   ├── vector_store.py            ← Qdrant client, collection setup
+ │   └── config.py                  ← Settings (model name, vector size, etc.)
+ │
+ ├── frontend/                      ← Streamlit UI
+ │   └── front_end.py               ← Beautiful space-themed search interface
+ │
+ ├── data/
+ │   ├── images/                    ← 500 Fashion-MNIST product images
+ │   └── qdrant_data/               ← Qdrant vector database files
+ │       └── collections/
+ │           └── Products/          ← Your 500 stored vectors live here
+ │
+ └── scripts/                       ← Helper scripts
     └── prepare_data.py            ← One-time: encodes images → stores in Qdrant
 ```
 
