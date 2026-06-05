@@ -348,12 +348,12 @@ You see 10 visually similar products 🎯
 ┌─────────────────────────────────────────────────────────────┐
 │                    DOCKER NETWORK                           │
 │                                                             │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐  │
-│  │  qdrant_db   │◄───│ visual_search│◄───│ streamlit_ui │  │
-│  │              │    │   (FastAPI)  │    │  (Frontend)  │  │
-│  │ Vector store │    │   Port 8000  │    │  Port 8501   │  │
-│  │ Port 6333    │    └──────────────┘    └──────────────┘  │
-│  └──────────────┘                                          │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐   │
+│  │  qdrant_db   │◄───│ visual_search│◄───│ streamlit_ui │   │
+│  │              │    │   (FastAPI)  │    │  (Frontend)  │   │
+│  │ Vector store │    │   Port 8000  │    │  Port 8501   │   │
+│  │ Port 6333    │    └──────────────┘    └──────────────┘   │
+│  └──────────────┘                                           │
 └─────────────────────────────────────────────────────────────┘
          ▲                    ▲                    ▲
     localhost:6333       localhost:8000       localhost:8501
@@ -534,7 +534,7 @@ docker-compose up
 Once all containers are running, open your browser and visit:
 
 | Service | URL | What it is |
-|---------|-----|-----------|
+|---------|-----|------------|
 | 🎨 Streamlit UI | http://localhost:8501 | Main search interface — upload images here |
 | ⚡ FastAPI Backend | http://localhost:8000 | REST API & auto-generated docs |
 | 🗄️ Qdrant Dashboard | http://localhost:6333/dashboard | Vector database explorer |
@@ -611,7 +611,7 @@ Both images are publicly available on **[Docker Hub →](https://hub.docker.com/
 ## 🛠️ Tech Stack
 
 | Technology | Role | Why This Choice |
-|-----------|------|----------------|
+|------------|------|-----------------|
 | **OpenAI CLIP** | Image/Text → Vector encoder | Understands both images and text in same space |
 | **Qdrant** | Vector database | Fast ANN search, great Python client, local storage |
 | **FastAPI** | REST API server | Async, auto-docs, fast |
