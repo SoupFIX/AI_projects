@@ -3,13 +3,13 @@
 <!-- ANIMATED HEADER BANNER — deep purple/cyber gradient with matrix code rain feel -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0221,30:1a0533,60:0a1628,100:00ffe1&height=220&section=header&fontSize=1&animation=fadeIn" width="100%"/>
 
-<!-- ANIMATED TITLE — Orbitron gaming font, neon cyan, typewriter loop -->
+<!-- ANIMATED TITLE — Orbitron gaming font, hot magenta to orange gradient feel -->
 <a href="https://github.com/SoupFIX/AI_projects">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=38&duration=2500&pause=1200&color=00FFE1&background=00000000&center=true&vCenter=true&width=900&height=90&lines=Visual+Product+Search+Engine;CLIP+%2B+Qdrant+%2B+FastAPI+%2B+Docker;Neural+Vision+%7C+Real-Time+Search;Upload+Image+%E2%86%92+Find+Similar+Products" alt="Animated Title" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=38&duration=2500&pause=1200&color=FF2D78&background=00000000&center=true&vCenter=true&width=900&height=90&lines=Visual+Product+Search+Engine;CLIP+%2B+Qdrant+%2B+FastAPI+%2B+Docker;Neural+Vision+%7C+Real-Time+Search;Upload+Image+%E2%86%92+Find+Similar+Products" alt="Animated Title" />
 </a>
 
 <!-- CODE RAIN ANIMATION — scrolling terminal-style code blocks -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0221,100:0a1628&height=120&section=header&text=import%20clip%20%7C%20qdrant_client%20%7C%20fastapi%20%7C%20torch%20%7C%20streamlit%0Avector%20%3D%20model.encode(image)%20%23%20512-dim%20embedding%0Aresults%20%3D%20db.search(vector%2C%20top_k%3D10)%20%23%20%3C20ms&fontSize=13&fontColor=00ffe1&fontAlignY=35&animation=blinking&desc=⚡%20Encoding%20image...%20✅%20Vectors%20stored...%20🔍%20Searching%20512-dim%20space...%20🎯%20Results%20found%20in%2018ms&descAlignY=78&descSize=12&descColor=7be0ff" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0221,100:0a1628&height=120&section=header&text=import%20clip%20%7C%20qdrant_client%20%7C%20fastapi%20%7C%20torch%20%7C%20streamlit%0Avector%20%3D%20model.encode(image)%20%23%20512-dim%20embedding%0Aresults%20%3D%20db.search(vector%2C%20top_k%3D10)%20%23%20%3C20ms&fontSize=13&fontColor=FF2D78&fontAlignY=35&animation=blinking&desc=⚡%20Encoding%20image...%20✅%20Vectors%20stored...%20🔍%20Searching%20512-dim%20space...%20🎯%20Results%20found%20in%2018ms&descAlignY=78&descSize=12&descColor=FF9F1C" width="100%"/>
 
 <br/><br/>
 
@@ -410,6 +410,6 @@ However, please **do not** copy it wholesale and publish or submit it as your ow
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0221,40:1a0533,100:00ffe1&height=140&section=footer&animation=fadeIn" width="100%"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=14&duration=3000&pause=1000&color=00FFE1&center=true&vCenter=true&width=600&height=35&lines=Built+with+🧠+neural+embeddings+%26+❤️+by+soup28;If+this+helped+you%2C+please+⭐+star+the+repo!" alt="Footer" />
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=14&duration=3000&pause=1000&color=FF2D78&center=true&vCenter=true&width=600&height=35&lines=Built+with+🧠+neural+embeddings+%26+❤️+by+soup28;If+this+helped+you%2C+please+⭐+star+the+repo!" alt="Footer" />
 
 </div>
