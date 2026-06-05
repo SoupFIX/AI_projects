@@ -122,22 +122,18 @@ async def search_by_image(file: UploadFile = File(...)):
         limit=TOP_K_RESULTS                # how many results to return
     )
     hits = result_response.points
-    for hit in hits:
-        print("DEBUG payload:", hit.payload)
-        print("DEBUG image_path value:", hit.payload.get('image_path', ''))
-    # --- Format results ---
-    # Your vector_store.py stores only {"image_path": "..."} in payload
-    # so we read that back here
     results = []
-    raw_path = hit.payload.get('image_path', '')
-    filename = Path(raw_path).name   # safely extracts just "0000_dress.png" regardless of OS
     for hit in hits:
-        results.append({
-            "rank": len(results) + 1,                          # 1st match, 2nd match, etc.
-            "score": round(hit.score, 4),                      # cosine similarity (0 to 1)
-            "image_path": f"/images/{filename}",   # path stored during indexing
-            "id": hit.id
-        })
+        raw_path = hit.payload.get('image_path', '')
+        filename = Path(raw_path).name   # safely extracts just "0000_dress.png" regardless of OS
+        results.append(
+            {
+                "rank": len(results) + 1,
+                "score": round(hit.score, 4),
+                "image_path": f"/images/{filename}",
+                "id": hit.id,
+            }
+        )
     return {
         "query_file": file.filename,
         "total_results": len(results),

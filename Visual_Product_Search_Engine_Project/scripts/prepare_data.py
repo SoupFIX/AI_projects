@@ -1,11 +1,25 @@
+"""
+prepare_data.py
+───────────────
+One-time pipeline:
+1. Download 500 Fashion-MNIST images from HuggingFace
+2. Save them to disk (path controlled by IMAGES_DIR env var)
+3. Encode each image with CLIP → 512-dim vector
+4. Store vectors + filenames in Qdrant
+"""
+
 import sys
 from pathlib import Path
 from datasets import load_dataset
 from PIL import Image
+
 sys.path.append(str(Path(__file__).parent.parent / "backend"))
 from vector_store import get_client,create_collection,store_vectors
 from clip_encoder import encode_image
-image_dir = Path(__file__).parent.parent / "data" / "images"
+
+_default_image_dir = Path(__file__).parent.parent / "data" / "images"
+IMAGE_DIR = Path(os.getenv("IMAGES_DIR", str(_default_image_dir)))
+
 num_image = 500
 Seed = 42
 Label_name = [

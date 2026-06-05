@@ -1,36 +1,47 @@
 version: "3.8"
+
 services:
 
   qdrant:
     image: qdrant/qdrant:latest
-    environment:
-      - QDRANT__TELEMETRY_DISABLED=true
     container_name: qdrant_database
     ports:
       - "6333:6333"
+      - "6334:6334"
+    environment:
+      - QDRANT__TELEMETRY_DISABLED=true
     volumes:
       - ./data/qdrant_data:/qdrant/storage
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   app:
-    image: soup28/visual_product_search_engine_project:api-2.0.0
+    image: soup28/visual-product-search-engine:api-1.0.0
     container_name: visual_search
     ports:
       - "8000:8000"
     depends_on:
-      - qdrant
+      qdrant:
+        condition: service_healthy
     environment:
       - QDRANT_HOST=qdrant
       - QDRANT_PORT=6333
       - IMAGES_DIR=/data/images
     volumes:
       - ./data/images:/data/images
+    restart: unless-stopped
 
   streamlit:
-    image: soup28/visual_product_search_engine_project:ui-1.0.0
+    image: soup28/visual-product-search-engine:ui-1.0.0
     container_name: streamlit_ui
     ports:
       - "8501:8501"
     depends_on:
       - app
     environment:
-      - API_BASE_URL=http://app:8000	
+      - API_BASE_URL=http://app:8000
+    restart: unless-stopped
