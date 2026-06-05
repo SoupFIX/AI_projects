@@ -376,8 +376,10 @@ Collection_name = "Products"                        # Qdrant collection name
 > A previous container is still holding the port. Run `docker-compose down` first, then `docker-compose up` again.
 
 ---
-📄 License
-All Rights Reserved.
+**📄 License**
+
+**All Rights Reserved.**
+
 Feel free to clone this project, run it locally, and explore how everything works together — that's exactly what it's here for! 🙌
 Use it as a real-world reference to learn how CLIP, Qdrant, FastAPI, and Docker come together in a production-style project.
 However, please do not copy it wholesale and publish or submit it as your own work. Give credit where it's due, and build your own awesome things inspired by it. ✨
