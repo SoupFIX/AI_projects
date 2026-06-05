@@ -1,30 +1,51 @@
 <div align="center">
 
-<!-- ANIMATED BANNER -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:0a2463,100:7be0ff&height=200&section=header&text=Visual%20Product%20Search%20Engine&fontSize=40&fontColor=7be0ff&fontAlignY=38&desc=Powered%20by%20CLIP%20·%20Qdrant%20·%20FastAPI%20·%20Docker&descAlignY=58&descSize=16&descColor=a5d8ff&animation=fadeIn" width="100%"/>
+<!-- ANIMATED HEADER BANNER — deep purple/cyber gradient with matrix code rain feel -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0221,30:1a0533,60:0a1628,100:00ffe1&height=220&section=header&fontSize=1&animation=fadeIn" width="100%"/>
 
-<br/>
+<!-- ANIMATED TITLE — Orbitron gaming font, neon cyan, typewriter loop -->
+<a href="https://github.com/SoupFIX/AI_projects">
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=38&duration=2500&pause=1200&color=00FFE1&background=00000000&center=true&vCenter=true&width=900&height=90&lines=Visual+Product+Search+Engine;CLIP+%2B+Qdrant+%2B+FastAPI+%2B+Docker;Neural+Vision+%7C+Real-Time+Search;Upload+Image+%E2%86%92+Find+Similar+Products" alt="Animated Title" />
+</a>
 
-<!-- ANIMATED TYPING -->
-<a href="#">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=22&duration=3000&pause=1000&color=7BE0FF&center=true&vCenter=true&multiline=true&width=700&height=80&lines=🔍+Upload+an+image+→+Find+visually+similar+products;🧠+512-Dimensional+Neural+Embeddings;⚡+Sub-20ms+Vector+Search+via+HNSW+Index" alt="Typing SVG" />
+<!-- CODE RAIN ANIMATION — scrolling terminal-style code blocks -->
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0221,100:0a1628&height=120&section=header&text=import%20clip%20%7C%20qdrant_client%20%7C%20fastapi%20%7C%20torch%20%7C%20streamlit%0Avector%20%3D%20model.encode(image)%20%23%20512-dim%20embedding%0Aresults%20%3D%20db.search(vector%2C%20top_k%3D10)%20%23%20%3C20ms&fontSize=13&fontColor=00ffe1&fontAlignY=35&animation=blinking&desc=⚡%20Encoding%20image...%20✅%20Vectors%20stored...%20🔍%20Searching%20512-dim%20space...%20🎯%20Results%20found%20in%2018ms&descAlignY=78&descSize=12&descColor=7be0ff" width="100%"/>
+
+<!-- SUBTITLE TYPING — features -->
+<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=16&duration=2000&pause=800&color=7BE0FF&center=true&vCenter=true&width=800&height=40&lines=🔍+Upload+an+image+→+Find+visually+similar+products+in+%3C20ms;🧠+512-Dimensional+Neural+Embeddings+via+CLIP+ViT%2FB32;⚡+HNSW+Approximate+Nearest+Neighbour+Vector+Search;🐳+Fully+Dockerized+%7C+3+containers%2C+1+command" alt="Features" />
+
+<br/><br/>
+
+<!-- BADGES WITH LINKS -->
+<a href="https://www.python.org/downloads/release/python-3110/" target="_blank">
+  <img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+</a>
+<a href="https://fastapi.tiangolo.com/" target="_blank">
+  <img src="https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
+</a>
+<a href="https://streamlit.io/" target="_blank">
+  <img src="https://img.shields.io/badge/Streamlit-1.37+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
+</a>
+<a href="https://www.docker.com/" target="_blank">
+  <img src="https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+</a>
+<a href="https://qdrant.tech/" target="_blank">
+  <img src="https://img.shields.io/badge/Qdrant-Vector_DB-DC244C?style=for-the-badge&logo=qdrant&logoColor=white"/>
+</a>
+<a href="https://openai.com/research/clip" target="_blank">
+  <img src="https://img.shields.io/badge/OpenAI-CLIP_ViT%2FB32-412991?style=for-the-badge&logo=openai&logoColor=white"/>
 </a>
 
 <br/><br/>
 
-<!-- BADGES -->
-![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.0+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Qdrant](https://img.shields.io/badge/Qdrant-Vector_DB-DC244C?style=for-the-badge&logo=qdrant&logoColor=white)
-![CLIP](https://img.shields.io/badge/OpenAI-CLIP_ViT/B32-412991?style=for-the-badge&logo=openai&logoColor=white)
+<img src="https://img.shields.io/badge/License-Reference%20Only-red?style=flat-square"/>
+<img src="https://img.shields.io/badge/Status-Production_Ready-00ffe1?style=flat-square"/>
+<img src="https://img.shields.io/docker/pulls/soup28/visual_product_search_engine_project?style=flat-square&color=7be0ff"/>
 
 <br/>
 
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=flat-square)
-![Docker Pulls](https://img.shields.io/docker/pulls/soup28/visual_product_search_engine_project?style=flat-square&color=blue)
+<!-- BOTTOM WAVE of header -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ffe1,50:0a1628,100:0d0221&height=80&section=footer&animation=fadeIn" width="100%"/>
 
 </div>
 
@@ -376,17 +397,22 @@ Collection_name = "Products"                        # Qdrant collection name
 > A previous container is still holding the port. Run `docker-compose down` first, then `docker-compose up` again.
 
 ---
-**📄 License**
+
+## 📄 License
 
 **All Rights Reserved.**
 
 Feel free to clone this project, run it locally, and explore how everything works together — that's exactly what it's here for! 🙌
 Use it as a real-world reference to learn how CLIP, Qdrant, FastAPI, and Docker come together in a production-style project.
-However, please do not copy it wholesale and publish or submit it as your own work. Give credit where it's due, and build your own awesome things inspired by it. ✨
+
+However, please **do not** copy it wholesale and publish or submit it as your own work. Give credit where it's due, and build your own awesome things inspired by it. ✨
+
+---
 
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7be0ff,50:0a2463,100:0d1117&height=120&section=footer&fontSize=14&fontColor=7be0ff&animation=fadeIn" width="100%"/>
-Built with 🧠 neural embeddings and ❤️ by soup28
-If this project helped you, please ⭐ star the repository!
-</div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0221,40:1a0533,100:00ffe1&height=140&section=footer&animation=fadeIn" width="100%"/>
+
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=14&duration=3000&pause=1000&color=00FFE1&center=true&vCenter=true&width=600&height=35&lines=Built+with+🧠+neural+embeddings+%26+❤️+by+soup28;If+this+helped+you%2C+please+⭐+star+the+repo!" alt="Footer" />
+
 </div>
