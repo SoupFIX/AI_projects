@@ -222,27 +222,45 @@ Visual_Product_Search_Engine_Project/
 
 ### Step 1 — Clone the Repository
 ```bash
-git clone https://github.com/soup28/visual_product_search_engine_project.git
-cd visual_product_search_engine_project
+git clone https://github.com/SoupFIX/AI_projects.git
 ```
 
-### Step 2 — Start All Services
+### Step 2 — Navigate to the Project Folder
+```bash
+cd AI_projects/Visual_Product_Search_Engine_project
+```
+
+### Step 3 — Start All Services
 ```bash
 docker-compose up
 ```
 
-This automatically:
-- Pulls Qdrant from Docker Hub
-- Pulls your pre-built FastAPI and Streamlit images
-- Loads your existing 500-vector database
-- Starts all 3 services
+> ⏳ **Wait 5–6 minutes** on the first run. Docker will pull all images and the CLIP model (~600MB) needs time to load. Subsequent starts are much faster (~30 seconds).
 
-### Step 3 — Open the App
+---
+
+### ✅ Access the App
+
+Once all containers are running, open your browser and visit:
+
 | Service | URL | What it is |
 |---------|-----|-----------|
-| 🎨 Streamlit UI | http://localhost:8501 | Beautiful search interface |
-| ⚡ FastAPI Docs | http://localhost:8000/docs | API documentation & testing |
+| 🎨 Streamlit UI | http://localhost:8501 | Main search interface — upload images here |
+| ⚡ FastAPI Backend | http://localhost:8000 | REST API & auto-generated docs |
 | 🗄️ Qdrant Dashboard | http://localhost:6333/dashboard | Vector database explorer |
+
+---
+
+### 🛑 Stopping the App
+
+To stop all running services, press **`Ctrl+C`** (2–3 times) in the terminal where `docker-compose up` is running.
+
+Or run this from the project folder in a separate terminal:
+```bash
+docker-compose down
+```
+
+> 💡 Always use `docker-compose down` for a clean stop — it properly releases ports so you don't run into "port already allocated" errors next time.
 
 ---
 
@@ -353,6 +371,9 @@ Collection_name = "Products"                        # Qdrant collection name
 
 **Q: What is HNSW?**
 > Hierarchical Navigable Small World — a graph algorithm that finds approximate nearest neighbours in O(log n) time instead of scanning every vector linearly. This is what makes Qdrant fast at scale.
+
+**Q: I get a "port already allocated" error when starting.**
+> A previous container is still holding the port. Run `docker-compose down` first, then `docker-compose up` again.
 
 ---
 
