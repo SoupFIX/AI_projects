@@ -376,19 +376,15 @@ Collection_name = "Products"                        # Qdrant collection name
 > A previous container is still holding the port. Run `docker-compose down` first, then `docker-compose up` again.
 
 ---
-
-## 📄 License
-
-MIT License — free to use, modify, and distribute.
-
----
+📄 License
+All Rights Reserved.
+Feel free to clone this project, run it locally, and explore how everything works together — that's exactly what it's here for! 🙌
+Use it as a real-world reference to learn how CLIP, Qdrant, FastAPI, and Docker come together in a production-style project.
+However, please do not copy it wholesale and publish or submit it as your own work. Give credit where it's due, and build your own awesome things inspired by it. ✨
 
 <div align="center">
-
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7be0ff,50:0a2463,100:0d1117&height=120&section=footer&fontSize=14&fontColor=7be0ff&animation=fadeIn" width="100%"/>
-
-**Built with 🧠 neural embeddings and ❤️ by soup28**
-
-*If this project helped you, please ⭐ star the repository!*
-
+Built with 🧠 neural embeddings and ❤️ by soup28
+If this project helped you, please ⭐ star the repository!
+</div>
 </div>
