@@ -13,11 +13,6 @@ services:
     volumes:
       - ./data/qdrant_data:/qdrant/storage
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:6333/healthz"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
   app:
     image: soup28/visual-product-search-engine:api-1.0.0
@@ -25,8 +20,7 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      qdrant:
-        condition: service_healthy
+      - qdrant
     environment:
       - QDRANT_HOST=qdrant
       - QDRANT_PORT=6333

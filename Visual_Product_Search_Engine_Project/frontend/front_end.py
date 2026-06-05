@@ -958,7 +958,7 @@ def show_results(results: list, total: int):
         with cols[i]:
             try:
                 browser_url = f"http://localhost:8000{item['image_path']}"
-                st.image(browser_url, use_container_width=True)
+                st.image(browser_url, use_column_width=True)
             except Exception:
                 st.warning("⚠ Signal lost")
             score_pct = round(item["score"] * 100, 1)
@@ -993,11 +993,11 @@ with tab1:
     if uploaded_file:
         col1, col2 = st.columns([1,2])
         with col1:
-            st.image(uploaded_file, caption="Query image", use_container_width=True)
+            st.image(uploaded_file, caption="Query image", use_column_width=True)
         with col2:
             st.write(f"**File:** {uploaded_file.name}")
             st.write(f"**Size:** {round(uploaded_file.size/1024,1)} KB")
-            search_clicked = st.button("⟳  Find Similar Products", use_container_width=True, type="primary")
+            search_clicked = st.button("⟳  Find Similar Products", type="primary")
         if search_clicked:
             with st.spinner("Traversing vector space…"):
                 try:
@@ -1022,7 +1022,7 @@ with tab2:
     ex_cols = st.columns(len(examples))
     for i, example in enumerate(examples):
         with ex_cols[i]:
-            if st.button(example, use_container_width=True):
+            if st.button(example):
                 st.session_state["text_query"] = example
     query = st.text_input(
         label="Search query",
@@ -1030,7 +1030,7 @@ with tab2:
         value=st.session_state.get("text_query",""),
         label_visibility="collapsed"
     )
-    if st.button("⟳  Search by Text", use_container_width=True, type="primary"):
+    if st.button("⟳  Search by Text", type="primary"):
         if not query.strip():
             st.warning("Please enter a search query.")
         else:
