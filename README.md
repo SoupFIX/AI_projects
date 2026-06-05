@@ -1,8 +1,5 @@
 <div align="center">
 
-<!-- ANIMATED HEADER BANNER — deep purple/cyber gradient with matrix code rain feel -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0221,30:1a0533,60:0a1628,100:00ffe1&height=220&section=header&fontSize=1&animation=fadeIn" width="100%"/>
-
 <!-- ANIMATED TITLE — Orbitron gaming font, hot magenta to orange gradient feel -->
 <a href="https://github.com/SoupFIX/AI_projects">
   <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=38&duration=2500&pause=1200&color=FF2D78&background=00000000&center=true&vCenter=true&width=900&height=90&lines=Visual+Product+Search+Engine;CLIP+%2B+Qdrant+%2B+FastAPI+%2B+Docker;Neural+Vision+%7C+Real-Time+Search;Upload+Image+%E2%86%92+Find+Similar+Products" alt="Animated Title" />
@@ -39,12 +36,7 @@
 <img src="https://img.shields.io/badge/Status-Production_Ready-00ffe1?style=flat-square"/>
 <img src="https://img.shields.io/docker/pulls/soup28/visual_product_search_engine_project?style=flat-square&color=7be0ff"/>
 
-<br/>
 
-<!-- BOTTOM WAVE of header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ffe1,50:0a1628,100:0d0221&height=80&section=footer&animation=fadeIn" width="100%"/>
-
-</div>
 
 ---
 
@@ -408,8 +400,8 @@ However, please **do not** copy it wholesale and publish or submit it as your ow
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0221,40:1a0533,100:00ffe1&height=140&section=footer&animation=fadeIn" width="100%"/>
+**Built with 🧠 neural embeddings and ❤️ by soup28**
 
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=14&duration=3000&pause=1000&color=FF2D78&center=true&vCenter=true&width=600&height=35&lines=Built+with+🧠+neural+embeddings+%26+❤️+by+soup28;If+this+helped+you%2C+please+⭐+star+the+repo!" alt="Footer" />
+*If this project helped you, please ⭐ star the repository!*
 
 </div>
