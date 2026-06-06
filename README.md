@@ -114,8 +114,8 @@ Internally Qdrant uses **HNSW** (Hierarchical Navigable Small World) graphs — 
 │                                                                     │
 │   ┌──────────────┐     ┌──────────────────┐     ┌───────────────┐   │
 │   │  qdrant_db   │◄────│  visual_search   │◄────│ streamlit_ui  │   │
-│   │              │     │    (FastAPI)      │     │  (Frontend)   │   │
-│   │ Vector Store │     │    Port 8000      │     │   Port 8501   │   │
+│   │              │     │    (FastAPI)      │     │  (Frontend)   │  │
+│   │ Vector Store │     │    Port 8000      │     │   Port 8501   │  │
 │   │  Port 6333   │     └──────────────────┘     └───────────────┘   │
 │   └──────────────┘                                                  │
 └─────────────────────────────────────────────────────────────────────┘
@@ -183,8 +183,8 @@ Run `prepare_data.py` once to encode all 500 product images and persist them int
          │
          ▼
 ┌──────────────────────┐
-│     CLIP Encoder      │  ← openai/clip-vit-base-patch32
-│   clip_encoder.py     │    Downloads from Hugging Face (~340 MB)
+│     CLIP Encoder     │  ← openai/clip-vit-base-patch32
+│   clip_encoder.py    │    Downloads from Hugging Face (~340 MB)
 └──────────────────────┘
          │  Converts each image → 512 floats
          ▼
@@ -200,7 +200,7 @@ What gets stored in Qdrant:
 │ 0001 │ [0.21, -0.84, 0.67, 0.44, ...]           │ 0001_sneaker.png   │
 │ 0002 │ [0.67,  0.03, 0.19, 0.81, ...]           │ 0002_bag.png       │
 │ 0003 │ [0.19, -0.81, 0.44, 0.55, ...]           │ 0003_sneaker.png   │
-│ ...  │ ...                                       │ ...                │
+│ ...  │ ...                                       │ ...               │
 │ 0500 │ [0.88,  0.12, 0.91, 0.24, ...]           │ 0500_jacket.png    │
 └──────┴──────────────────────────────────────────┴────────────────────┘
 ```
@@ -214,14 +214,14 @@ User uploads image (e.g. a bag photo)
          │
          ▼ POST /search
 ┌──────────────────────┐
-│       FastAPI         │  ← app.py receives the multipart upload
-│        app.py         │
+│       FastAPI        │  ← app.py receives the multipart upload
+│        app.py        │
 └──────────────────────┘
          │
          ▼
 ┌──────────────────────┐
-│     CLIP Encoder      │  ← Same model, same 512-number space
-│   clip_encoder.py     │    Query image → query vector
+│     CLIP Encoder     │  ← Same model, same 512-number space
+│   clip_encoder.py    │    Query image → query vector
 └──────────────────────┘
          │  query_vector = [0.44, -0.12, 0.88, ...]
          ▼
