@@ -1,0 +1,285 @@
+<svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Base background -->
+    <linearGradient id="bgBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020818"/>
+      <stop offset="45%" stop-color="#060d22"/>
+      <stop offset="100%" stop-color="#03091a"/>
+    </linearGradient>
+
+    <!-- Animated orb gradients -->
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Title gradient (cycling colours) -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8">
+        <animate attributeName="stop-color"
+                 values="#38bdf8;#a78bfa;#22d3ee;#f472b6;#38bdf8"
+                 dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#a78bfa">
+        <animate attributeName="stop-color"
+                 values="#a78bfa;#22d3ee;#f472b6;#38bdf8;#a78bfa"
+                 dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#22d3ee">
+        <animate attributeName="stop-color"
+                 values="#22d3ee;#f472b6;#38bdf8;#a78bfa;#22d3ee"
+                 dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Underline gradient -->
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#38bdf8"/>
+      <stop offset="70%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Border shimmer -->
+    <linearGradient id="borderShimmer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5">
+        <animate attributeName="stop-opacity" values="0.5;0.15;0.8;0.3;0.5" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.35">
+        <animate attributeName="stop-opacity" values="0.35;0.7;0.2;0.6;0.35" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.5">
+        <animate attributeName="stop-opacity" values="0.5;0.3;0.6;0.15;0.5" dur="5s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Gloss sheen -->
+    <linearGradient id="gloss" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="45%"  stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="55%"  stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="glow" x="-15%" y="-60%" width="130%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow" x="-10%" y="-40%" width="120%" height="180%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="pGlow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Clip for typewriter reveal (mask slides right to expose text) -->
+    <clipPath id="typeClip">
+      <rect x="0" y="70" height="80" width="0" rx="0">
+        <animate attributeName="width" from="0" to="900" dur="2.4s"
+                 fill="freeze" calcMode="spline"
+                 keyTimes="0;1" keySplines="0.4 0 0.6 1"/>
+      </rect>
+    </clipPath>
+
+    <!-- Rounded corner clip -->
+    <clipPath id="frame">
+      <rect width="900" height="280" rx="18"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+
+    <!-- ── BACKGROUND ── -->
+    <rect width="900" height="280" fill="url(#bgBase)"/>
+
+    <!-- Drifting orb 1 — cyan-blue -->
+    <ellipse rx="220" ry="180" fill="url(#orb1)">
+      <animate attributeName="cx" values="130;220;90;130" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="90;170;65;90"   dur="10s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Drifting orb 2 — purple -->
+    <ellipse rx="240" ry="200" fill="url(#orb2)">
+      <animate attributeName="cx" values="760;680;810;760" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="210;130;200;210"  dur="12s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Drifting orb 3 — teal -->
+    <ellipse rx="160" ry="130" fill="url(#orb3)">
+      <animate attributeName="cx" values="450;530;400;450" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="55;130;80;55"    dur="9s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Subtle grid -->
+    <g opacity="0.045" stroke="#38bdf8" stroke-width="0.6">
+      <line x1="0" y1="56"  x2="900" y2="56"/>
+      <line x1="0" y1="112" x2="900" y2="112"/>
+      <line x1="0" y1="168" x2="900" y2="168"/>
+      <line x1="0" y1="224" x2="900" y2="224"/>
+      <line x1="180" y1="0" x2="180" y2="280"/>
+      <line x1="360" y1="0" x2="360" y2="280"/>
+      <line x1="540" y1="0" x2="540" y2="280"/>
+      <line x1="720" y1="0" x2="720" y2="280"/>
+    </g>
+
+    <!-- ── FLOATING PARTICLES ── -->
+    <g filter="url(#pGlow)">
+      <circle cx="55"  cy="55"  r="2"   fill="#38bdf8">
+        <animate attributeName="cy" values="55;15;55"   dur="5.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="5.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="145" cy="195" r="1.6" fill="#a78bfa">
+        <animate attributeName="cy" values="195;155;195" dur="6.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.15;0.7" dur="6.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="295" cy="38"  r="1.6" fill="#22d3ee">
+        <animate attributeName="cy" values="38;78;38"   dur="4.3s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="295;315;295" dur="4.3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="498" cy="242" r="2"   fill="#38bdf8">
+        <animate attributeName="cy" values="242;198;242" dur="7.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="7.1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="648" cy="48"  r="1.6" fill="#a78bfa">
+        <animate attributeName="cy" values="48;98;48"   dur="5.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.18;0.7" dur="5.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="818" cy="178" r="2"   fill="#22d3ee">
+        <animate attributeName="cy" values="178;128;178" dur="6.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="775" cy="38"  r="1.5" fill="#38bdf8">
+        <animate attributeName="cy" values="38;82;38"   dur="4.7s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="775;752;775" dur="4.7s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="375" cy="258" r="1.5" fill="#a78bfa">
+        <animate attributeName="cy" values="258;215;258" dur="8.3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="865" cy="108" r="1.5" fill="#22d3ee">
+        <animate attributeName="cy" values="108;65;108"  dur="5.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="28"  cy="148" r="1.5" fill="#a78bfa">
+        <animate attributeName="cy" values="148;192;148" dur="7.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="530" cy="25"  r="1.5" fill="#f472b6">
+        <animate attributeName="cy" values="25;70;25"   dur="6s"   repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0.1;0.5" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="700" cy="250" r="1.5" fill="#38bdf8">
+        <animate attributeName="cy" values="250;210;250" dur="7.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- ── TITLE — shadow layer (always visible) ── -->
+    <text x="450" y="130"
+          text-anchor="middle"
+          font-family="'Courier New', Courier, monospace"
+          font-size="50" font-weight="900"
+          fill="#000000" opacity="0.45" dx="2" dy="4">
+      Visual Product Search Engine
+    </text>
+
+    <!-- ── TITLE — gradient fill, revealed by clip typewriter ── -->
+    <text x="450" y="130"
+          text-anchor="middle"
+          font-family="'Courier New', Courier, monospace"
+          font-size="50" font-weight="900"
+          fill="url(#titleGrad)"
+          filter="url(#glow)"
+          clip-path="url(#typeClip)">
+      Visual Product Search Engine
+    </text>
+
+    <!-- Blinking cursor — appears after title finishes (~2.4s) -->
+    <rect x="795" y="86" width="4" height="50" rx="1" fill="#38bdf8">
+      <animate attributeName="opacity"
+               values="0;0;1;1;0;0;1;1;0"
+               keyTimes="0;0.43;0.43;0.57;0.57;0.71;0.71;0.86;1"
+               dur="2s" begin="2.4s" repeatCount="indefinite"/>
+      <!-- hide cursor before title reveals -->
+      <animate attributeName="opacity" values="0;0" dur="2.4s" fill="freeze"/>
+    </rect>
+
+    <!-- ── ANIMATED UNDERLINE ── -->
+    <rect y="144" height="3" rx="1.5" fill="url(#lineGrad)" filter="url(#softGlow)">
+      <!-- starts width=0 centred, expands outward -->
+      <animate attributeName="width" from="0" to="680" dur="0.7s" begin="2.4s" fill="freeze"
+               calcMode="spline" keyTimes="0;1" keySplines="0.25 0.1 0.25 1"/>
+      <animate attributeName="x"     from="450" to="110" dur="0.7s" begin="2.4s" fill="freeze"
+               calcMode="spline" keyTimes="0;1" keySplines="0.25 0.1 0.25 1"/>
+    </rect>
+
+    <!-- ── SUBTITLE ── -->
+    <text x="450" y="172"
+          text-anchor="middle"
+          font-family="'Courier New', Courier, monospace"
+          font-size="13" fill="#94a3b8" letter-spacing="1.5">
+      Google Lens — but for your own product catalog
+      <animate attributeName="opacity" values="0;0;0;0.85" keyTimes="0;0.5;0.7;1"
+               dur="4.5s" fill="freeze"/>
+    </text>
+
+    <!-- ── PILL TAGS ── -->
+    <g font-family="'Courier New', Courier, monospace" font-size="10" font-weight="bold">
+      <animate attributeName="opacity" values="0;0;0;1" keyTimes="0;0.6;0.8;1"
+               dur="5s" fill="freeze"/>
+
+      <rect x="215" y="190" width="72"  height="21" rx="10.5" fill="#0ea5e9" fill-opacity="0.15" stroke="#0ea5e9" stroke-width="0.8"/>
+      <text x="251" y="205" text-anchor="middle" fill="#38bdf8">⚡ CLIP</text>
+
+      <rect x="297" y="190" width="78"  height="21" rx="10.5" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="0.8"/>
+      <text x="336" y="205" text-anchor="middle" fill="#f87171">🗄 Qdrant</text>
+
+      <rect x="385" y="190" width="82"  height="21" rx="10.5" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="0.8"/>
+      <text x="426" y="205" text-anchor="middle" fill="#34d399">⚙ FastAPI</text>
+
+      <rect x="477" y="190" width="78"  height="21" rx="10.5" fill="#2563eb" fill-opacity="0.15" stroke="#2563eb" stroke-width="0.8"/>
+      <text x="516" y="205" text-anchor="middle" fill="#60a5fa">🐳 Docker</text>
+
+      <rect x="565" y="190" width="94"  height="21" rx="10.5" fill="#7c3aed" fill-opacity="0.15" stroke="#7c3aed" stroke-width="0.8"/>
+      <text x="612" y="205" text-anchor="middle" fill="#a78bfa">📐 512-dim</text>
+    </g>
+
+    <!-- ── STAT BADGES ── -->
+    <g font-family="'Courier New', Courier, monospace">
+      <animate attributeName="opacity" values="0;0;0;0;1" keyTimes="0;0.5;0.7;0.85;1"
+               dur="5.5s" fill="freeze"/>
+
+      <text x="267" y="245" text-anchor="middle" font-size="20" font-weight="bold"
+            fill="#22d3ee" filter="url(#softGlow)">&lt;20ms</text>
+      <text x="267" y="260" text-anchor="middle" font-size="8.5" fill="#64748b" letter-spacing="1">SEARCH LATENCY</text>
+
+      <text x="450" y="245" text-anchor="middle" font-size="20" font-weight="bold"
+            fill="#a78bfa" filter="url(#softGlow)">512-D</text>
+      <text x="450" y="260" text-anchor="middle" font-size="8.5" fill="#64748b" letter-spacing="1">VECTOR SPACE</text>
+
+      <text x="633" y="245" text-anchor="middle" font-size="20" font-weight="bold"
+            fill="#34d399" filter="url(#softGlow)">500+</text>
+      <text x="633" y="260" text-anchor="middle" font-size="8.5" fill="#64748b" letter-spacing="1">PRODUCT VECTORS</text>
+
+      <circle cx="358" cy="250" r="2.5" fill="#334155"/>
+      <circle cx="542" cy="250" r="2.5" fill="#334155"/>
+    </g>
+
+    <!-- Glossy top-coat sheen -->
+    <rect width="900" height="280" fill="url(#gloss)"/>
+
+  </g><!-- end frame clip -->
+
+  <!-- Border shimmer (outside clip = crisp edge) -->
+  <rect x="1" y="1" width="898" height="278" rx="17"
+        fill="none" stroke="url(#borderShimmer)" stroke-width="1.5"/>
+  <!-- Top inner highlight -->
+  <line x1="22" y1="2" x2="878" y2="2"
+        stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.06" stroke-linecap="round"/>
+</svg>

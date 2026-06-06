@@ -1,0 +1,275 @@
+<svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" font-family="monospace">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1a"/>
+      <stop offset="100%" style="stop-color:#0d1b2a"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a3e"/>
+      <stop offset="100%" style="stop-color:#0f2944"/>
+    </linearGradient>
+    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="resultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0.3"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="420" fill="url(#bg)" rx="16"/>
+  
+  <!-- Grid lines -->
+  <g opacity="0.06" stroke="#00d4ff" stroke-width="0.5">
+    <line x1="0" y1="60" x2="900" y2="60"/>
+    <line x1="0" y1="120" x2="900" y2="120"/>
+    <line x1="0" y1="180" x2="900" y2="180"/>
+    <line x1="0" y1="240" x2="900" y2="240"/>
+    <line x1="0" y1="300" x2="900" y2="300"/>
+    <line x1="0" y1="360" x2="900" y2="360"/>
+    <line x1="150" y1="0" x2="150" y2="420"/>
+    <line x1="300" y1="0" x2="300" y2="420"/>
+    <line x1="450" y1="0" x2="450" y2="420"/>
+    <line x1="600" y1="0" x2="600" y2="420"/>
+    <line x1="750" y1="0" x2="750" y2="420"/>
+  </g>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" fill="#00d4ff" font-size="13" font-weight="bold" filter="url(#glow)" letter-spacing="4">⚡ VISUAL SEARCH ENGINE — LIVE PIPELINE ⚡</text>
+
+  <!-- ===== STAGE 1: USER INPUT ===== -->
+  <g>
+    <rect x="20" y="55" width="130" height="80" rx="10" fill="url(#nodeGrad)" stroke="#00d4ff" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="85" y="80" text-anchor="middle" fill="#00d4ff" font-size="10" font-weight="bold">USER INPUT</text>
+    <!-- Shoe icon -->
+    <text x="85" y="108" text-anchor="middle" font-size="26">👟</text>
+    <text x="85" y="128" text-anchor="middle" fill="#7ecfff" font-size="8">image upload</text>
+    <!-- Pulse border animation -->
+    <rect x="20" y="55" width="130" height="80" rx="10" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;0.8;0" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="2;4;2" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <text x="85" y="155" text-anchor="middle" fill="#00ff88" font-size="8">Step 1</text>
+
+  <!-- Arrow 1→2 with data pulse -->
+  <line x1="152" y1="95" x2="198" y2="95" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+  <circle r="4" fill="#00d4ff" filter="url(#glow)">
+    <animateMotion dur="2.5s" repeatCount="indefinite" path="M152,95 L198,95"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ===== STAGE 2: FASTAPI ===== -->
+  <g>
+    <rect x="200" y="55" width="130" height="80" rx="10" fill="url(#nodeGrad)" stroke="#7c3aed" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="265" y="78" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="bold">FastAPI</text>
+    <text x="265" y="93" text-anchor="middle" fill="#7ecfff" font-size="8">RECEIVES REQUEST</text>
+    <!-- Spinning indicator -->
+    <circle cx="265" cy="108" r="12" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="4 4">
+      <animateTransform attributeName="transform" type="rotate" from="0 265 108" to="360 265 108" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="265" y="113" text-anchor="middle" fill="#a78bfa" font-size="11">⚡</text>
+    <text x="265" y="130" text-anchor="middle" fill="#7ecfff" font-size="8">port :8000</text>
+    <rect x="200" y="55" width="130" height="80" rx="10" fill="none" stroke="#a78bfa" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.6;0" dur="2.5s" begin="0.4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <text x="265" y="155" text-anchor="middle" fill="#00ff88" font-size="8">Step 2</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="332" y1="95" x2="378" y2="95" stroke="#7c3aed" stroke-width="1.5" opacity="0.4"/>
+  <circle r="4" fill="#a78bfa" filter="url(#glow)">
+    <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.5s" path="M332,95 L378,95"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ===== STAGE 3: CLIP MODEL ===== -->
+  <g>
+    <rect x="380" y="55" width="140" height="80" rx="10" fill="url(#nodeGrad)" stroke="#f59e0b" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="450" y="78" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">CLIP MODEL</text>
+    <text x="450" y="91" text-anchor="middle" fill="#7ecfff" font-size="8">openai/clip-vit-base</text>
+    <!-- Brain wave animation -->
+    <path d="M400,108 Q415,98 430,108 Q445,118 460,108 Q475,98 490,108 Q505,118 510,108" fill="none" stroke="#f59e0b" stroke-width="2" filter="url(#glow)">
+      <animate attributeName="d" values="M400,108 Q415,98 430,108 Q445,118 460,108 Q475,98 490,108 Q505,118 510,108;M400,108 Q415,118 430,108 Q445,98 460,108 Q475,118 490,108 Q505,98 510,108;M400,108 Q415,98 430,108 Q445,118 460,108 Q475,98 490,108 Q505,118 510,108" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+    <text x="450" y="130" text-anchor="middle" fill="#fbbf24" font-size="8">512-dim encoder</text>
+    <rect x="380" y="55" width="140" height="80" rx="10" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;0;0;0.7;0" dur="2.5s" begin="0.9s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <text x="450" y="155" text-anchor="middle" fill="#00ff88" font-size="8">Step 3</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="522" y1="95" x2="568" y2="95" stroke="#f59e0b" stroke-width="1.5" opacity="0.4"/>
+  <circle r="4" fill="#fbbf24" filter="url(#glow)">
+    <animateMotion dur="2.5s" repeatCount="indefinite" begin="1s" path="M522,95 L568,95"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ===== STAGE 4: QDRANT ===== -->
+  <g>
+    <rect x="570" y="40" width="145" height="110" rx="10" fill="url(#nodeGrad)" stroke="#ef4444" stroke-width="2" filter="url(#strongGlow)"/>
+    <text x="642" y="63" text-anchor="middle" fill="#f87171" font-size="10" font-weight="bold">QDRANT DB</text>
+    <text x="642" y="76" text-anchor="middle" fill="#7ecfff" font-size="8">VECTOR SEARCH</text>
+    <!-- Scanning animation -->
+    <rect x="582" y="84" width="121" height="6" rx="3" fill="#1a2a3a"/>
+    <rect x="582" y="84" width="121" height="6" rx="3" fill="url(#pulseGrad)">
+      <animate attributeName="x" values="582;582;582" dur="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;121,0;0,0" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="582" y="96" width="121" height="6" rx="3" fill="#1a2a3a"/>
+    <rect x="582" y="96" width="121" height="6" rx="3" fill="url(#pulseGrad)">
+      <animateTransform attributeName="transform" type="translate" values="121,0;0,0;121,0" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="582" y="108" width="121" height="6" rx="3" fill="#1a2a3a"/>
+    <rect x="582" y="108" width="121" height="6" rx="3" fill="url(#pulseGrad)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;121,0;0,0" dur="0.9s" repeatCount="indefinite"/>
+    </rect>
+    <text x="642" y="138" text-anchor="middle" fill="#f87171" font-size="8">500 vectors • HNSW</text>
+    <text x="642" y="148" text-anchor="middle" fill="#7ecfff" font-size="8">cosine similarity</text>
+    <rect x="570" y="40" width="145" height="110" rx="10" fill="none" stroke="#ef4444" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;0;0;0.9;0" dur="2.5s" begin="1.4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <text x="642" y="165" text-anchor="middle" fill="#00ff88" font-size="8">Step 4</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="717" y1="95" x2="760" y2="95" stroke="#ef4444" stroke-width="1.5" opacity="0.4"/>
+  <circle r="4" fill="#f87171" filter="url(#glow)">
+    <animateMotion dur="2.5s" repeatCount="indefinite" begin="1.6s" path="M717,95 L760,95"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" begin="1.6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ===== STAGE 5: RESULTS ===== -->
+  <g>
+    <rect x="762" y="55" width="118" height="80" rx="10" fill="url(#nodeGrad)" stroke="#00ff88" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="821" y="78" text-anchor="middle" fill="#00ff88" font-size="10" font-weight="bold">RESULTS</text>
+    <text x="821" y="91" text-anchor="middle" fill="#7ecfff" font-size="8">TOP 10 MATCHES</text>
+    <text x="821" y="105" text-anchor="middle" fill="#00ff88" font-size="9">🎯 0.98</text>
+    <text x="821" y="117" text-anchor="middle" fill="#00ff88" font-size="9">🎯 0.95</text>
+    <text x="821" y="129" text-anchor="middle" fill="#7ecfff" font-size="9">• 0.91...</text>
+    <rect x="762" y="55" width="118" height="80" rx="10" fill="none" stroke="#00ff88" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;0;0;0;0;1;0" dur="2.5s" begin="1.9s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <text x="821" y="155" text-anchor="middle" fill="#00ff88" font-size="8">Step 5</text>
+
+  <!-- ===== VECTOR VISUALIZATION SECTION ===== -->
+  <text x="450" y="188" text-anchor="middle" fill="#7ecfff" font-size="9" opacity="0.7">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</text>
+  <text x="450" y="203" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold" letter-spacing="2">VECTOR SPACE — LIVE SIMILARITY SEARCH</text>
+
+  <!-- VECTOR SPACE VISUALIZATION -->
+  <!-- Central query vector dot -->
+  <circle cx="280" cy="300" r="12" fill="#fbbf24" filter="url(#strongGlow)">
+    <animate attributeName="r" values="12;16;12" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="280" y="330" text-anchor="middle" fill="#fbbf24" font-size="9">query</text>
+
+  <!-- Similarity rings -->
+  <circle cx="280" cy="300" r="35" fill="none" stroke="#fbbf24" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.3">
+    <animate attributeName="r" values="35;50;35" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="280" cy="300" r="70" fill="none" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.2">
+    <animate attributeName="r" values="70;85;70" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Result dots — animated to converge -->
+  <g filter="url(#glow)">
+    <!-- Score 0.98 - very close -->
+    <circle cx="305" cy="278" r="8" fill="#00ff88">
+      <animate attributeName="cx" values="380;305" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="220;278" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <text text-anchor="middle" fill="#00ff88" font-size="8">
+      <animate attributeName="x" values="380;305" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="210;268" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1" dur="2.5s" repeatCount="indefinite"/>
+      0.98
+    </text>
+
+    <!-- Score 0.95 -->
+    <circle cx="252" cy="270" r="7" fill="#00ff88">
+      <animate attributeName="cx" values="150;252" dur="2.5s" begin="0.1s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="220;270" dur="2.5s" begin="0.1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1" dur="2.5s" begin="0.1s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Score 0.91 -->
+    <circle cx="315" cy="310" r="6" fill="#7dd3fc">
+      <animate attributeName="cx" values="400;315" dur="2.5s" begin="0.2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="350;310" dur="2.5s" begin="0.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1" dur="2.5s" begin="0.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Score 0.88 -->
+    <circle cx="248" cy="328" r="6" fill="#7dd3fc">
+      <animate attributeName="cx" values="160;248" dur="2.5s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="380;328" dur="2.5s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1" dur="2.5s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Score 0.84 -->
+    <circle cx="335" cy="290" r="5" fill="#a78bfa">
+      <animate attributeName="cx" values="430;335" dur="2.5s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="240;290" dur="2.5s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1" dur="2.5s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Others far away -->
+    <circle cx="230" cy="355" r="5" fill="#a78bfa" opacity="0.6"/>
+    <circle cx="340" cy="340" r="4" fill="#a78bfa" opacity="0.5"/>
+    <circle cx="210" cy="290" r="4" fill="#6b7280" opacity="0.4"/>
+    <circle cx="350" cy="260" r="4" fill="#6b7280" opacity="0.4"/>
+    <circle cx="220" cy="320" r="3" fill="#6b7280" opacity="0.3"/>
+  </g>
+
+  <!-- Lines from query to top results -->
+  <line x1="280" y1="300" x2="305" y2="278" stroke="#00ff88" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="280" y1="300" x2="252" y2="270" stroke="#00ff88" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="280" y1="300" x2="315" y2="310" stroke="#7dd3fc" stroke-width="1" stroke-dasharray="3 2" opacity="0.4"/>
+  <line x1="280" y1="300" x2="248" y2="328" stroke="#7dd3fc" stroke-width="1" stroke-dasharray="3 2" opacity="0.4"/>
+
+  <!-- LEGEND -->
+  <circle cx="430" cy="230" r="6" fill="#00ff88" filter="url(#glow)"/>
+  <text x="442" y="234" fill="#00ff88" font-size="9">Score ≥ 0.90 — Excellent match</text>
+  <circle cx="430" cy="248" r="6" fill="#7dd3fc"/>
+  <text x="442" y="252" fill="#7dd3fc" font-size="9">Score ≥ 0.80 — Strong match</text>
+  <circle cx="430" cy="266" r="5" fill="#a78bfa"/>
+  <text x="442" y="270" fill="#a78bfa" font-size="9">Score ≥ 0.70 — Good match</text>
+  <circle cx="430" cy="283" r="4" fill="#6b7280"/>
+  <text x="442" y="287" fill="#6b7280" font-size="9">Score &lt; 0.70 — Weak match</text>
+
+  <!-- VECTOR NUMBERS display -->
+  <rect x="430" y="300" width="440" height="100" rx="8" fill="#050a15" stroke="#00d4ff" stroke-width="0.5" opacity="0.8"/>
+  <text x="445" y="318" fill="#00d4ff" font-size="9" font-weight="bold">QUERY VECTOR (512 dims, truncated)</text>
+  <text x="445" y="334" fill="#00ff88" font-size="8" font-family="monospace">[0.2103, -0.8412, 0.6723, 0.4401, 0.9812, -0.1204, 0.5532, 0.7891,</text>
+  <text x="445" y="348" fill="#00ff88" font-size="8" font-family="monospace"> 0.3312, -0.4421, 0.8801, 0.2233, -0.6612, 0.1145, 0.9023, 0.4456,</text>
+  <text x="445" y="362" fill="#7ecfff" font-size="8" font-family="monospace"> 0.7712, -0.3341, 0.5523, 0.8834, -0.2215, 0.6678, 0.3389, 0.1145,</text>
+  <text x="445" y="376" fill="#a78bfa" font-size="8" font-family="monospace"> ... 488 more dimensions ...]</text>
+  <!-- Blinking cursor -->
+  <rect x="833" y="368" width="7" height="12" fill="#a78bfa">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Speed badge -->
+  <rect x="570" y="200" width="135" height="40" rx="8" fill="#0d1b0d" stroke="#00ff88" stroke-width="1"/>
+  <text x="637" y="218" text-anchor="middle" fill="#00ff88" font-size="11" font-weight="bold" filter="url(#glow)">⚡ &lt; 20ms</text>
+  <text x="637" y="232" text-anchor="middle" fill="#7ecfff" font-size="9">search latency</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="400" width="900" height="20" rx="0" fill="#050a15" opacity="0.6"/>
+  <text x="450" y="414" text-anchor="middle" fill="#00d4ff" font-size="8" opacity="0.6" letter-spacing="6">CLIP • QDRANT • FASTAPI • STREAMLIT • DOCKER</text>
+</svg>
